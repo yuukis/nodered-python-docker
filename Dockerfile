@@ -16,17 +16,20 @@ RUN apk update \
     && fc-cache -fv
 RUN apk add cups-client
 
-RUN npm install node-red-contrib-play-audio
-RUN npm install node-red-dashboard
-RUN npm install node-red-node-mysql
-RUN npm install node-red-node-pi-gpio
-RUN npm install node-red-node-ping
-RUN npm install node-red-node-random
-RUN npm install node-red-node-rbe
-RUN npm install node-red-node-serialport
-RUN npm install node-red-node-smooth
-RUN npm install node-red-node-sqlite
-RUN npm install node-red-node-tail
+RUN npm install \
+    node-red-contrib-google-sheets \
+    node-red-contrib-loop-processing \
+    node-red-contrib-play-audio \
+    node-red-dashboard \
+    node-red-node-mysql \
+    node-red-node-pi-gpio \
+    node-red-node-ping \
+    node-red-node-random \
+    node-red-node-rbe \
+    node-red-node-serialport \
+    node-red-node-smooth \
+    node-red-node-sqlite \
+    node-red-node-tail
 
 RUN apk --update-cache add \
     freetype-dev \
@@ -61,4 +64,3 @@ RUN pip install \
     pydrive \
     pyusb \
     qrcode
-
